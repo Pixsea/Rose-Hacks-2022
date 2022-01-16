@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerInventory : MonoBehaviour
     
     private Dictionary<string, string> inventoryDescr = new Dictionary<string, string>();
     private Dictionary<string, int> inventoryQuantity = new Dictionary<string, int>();
+    private Dictionary<string, Sprite> images = new Dictionary<string, Sprite>();
 
 
     // Start is called before the first frame update
@@ -37,6 +40,8 @@ public class PlayerInventory : MonoBehaviour
         {
             inventoryDescr[item.getName()] = item.getDescription();
             inventoryQuantity[item.getName()] = item.getQuantity();
+            images[item.getName()] = item.gameObject.GetComponent<SpriteRenderer>().sprite;
+            this.gameObject.GetComponent<InventoryUI>().addItemToInventory(item.getName(), item.getQuantity(), images[item.getName()]);
         }
 
     }

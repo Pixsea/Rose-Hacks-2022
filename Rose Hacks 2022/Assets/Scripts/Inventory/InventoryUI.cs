@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -12,8 +14,8 @@ public class InventoryUI : MonoBehaviour
 
     public GameObject startingObject;
 
-    private List<string> items = new List<string>();
-    private List<int> itemCounts = new List<int>();
+    //private List<string> items = new List<string>();
+    //private List<int> itemCounts = new List<int>();
 
     public List<GameObject> inventoryBlocks = new List<GameObject>();
 
@@ -41,8 +43,18 @@ public class InventoryUI : MonoBehaviour
             newBlock.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
             newBlock.transform.position = new Vector3(startingObject.transform.position.x+(margin*inventoryBlocks.Count), startingObject.transform.position.y, startingObject.transform.position.z);
             inventoryBlocks.Add(newBlock);
-            timeRemaining = 5f;
+            timeRemaining = 2f;
         }
         
+    }
+
+    public void addItemToInventory(string name, int count, Sprite image)
+    {
+        GameObject newBlock = Instantiate(inventoryBlock, new Vector3(startingObject.transform.position.x + (margin * inventoryBlocks.Count), startingObject.transform.position.y, startingObject.transform.position.z), Quaternion.identity);
+        newBlock.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+        newBlock.transform.position = new Vector3(startingObject.transform.position.x + (margin * inventoryBlocks.Count), startingObject.transform.position.y, startingObject.transform.position.z);
+        inventoryBlocks.Add(newBlock);
+        newBlock.GetComponent<InventoryBlock>().setText(count);
+        newBlock.GetComponent<InventoryBlock>().setSprite(image);
     }
 }
