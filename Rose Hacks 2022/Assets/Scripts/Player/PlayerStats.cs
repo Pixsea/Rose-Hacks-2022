@@ -153,7 +153,7 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    void ChangeHappiness(float changeValue)
+    public void ChangeHappiness(float changeValue)
     {
         happinessMeter.fillAmount += changeValue;
     }
@@ -179,7 +179,7 @@ public class PlayerStats : MonoBehaviour
             gameObject.GetComponent<PlayerInventory>().addItem(newItem);
             DestroyObject(obj.gameObject);
 
-            ChangeHappiness(.1f);
+            //ChangeHappiness(.1f);
             audio.PlayOneShot(collectSound, .2f);
         }
     }

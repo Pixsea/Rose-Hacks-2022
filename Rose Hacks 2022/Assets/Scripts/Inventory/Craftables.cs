@@ -10,8 +10,16 @@ public class Craftables : MonoBehaviour
     
     public void Start()
     {
+        player = gameObject;
         inventory = player.GetComponent<PlayerInventory>();
     }
+
+
+    void Increasehappiness(float value)
+    {
+        player.GetComponent<PlayerStats>().ChangeHappiness(value);
+    }
+
 
     public void craftSoup()
     {
@@ -23,6 +31,7 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Berry", 2);
 
             // gain happiness
+            Increasehappiness(.1f);
         }
     }
 
