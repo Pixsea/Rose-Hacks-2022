@@ -150,6 +150,7 @@ public class PlayerStats : MonoBehaviour
         health = maxHealth;
         healthText.text = health.ToString();
         gameObject.transform.position = spawnPoint;
+        ChangeHappiness(-.1f);
     }
 
 

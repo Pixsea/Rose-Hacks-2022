@@ -57,7 +57,7 @@ MonoBehaviour:
   turning: 0
   facingPlayer: 0
   moving: 0
-  followDistance: 30
+  followDistance: 15
   dropItem: {fileID: 1930675593808552889, guid: 490b80b159a71cf46996a32e0473b758,
     type: 3}
   dropItem2: {fileID: 0}

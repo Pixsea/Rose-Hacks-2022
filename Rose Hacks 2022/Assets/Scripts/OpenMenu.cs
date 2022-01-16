@@ -6,6 +6,10 @@ public class OpenMenu : MonoBehaviour
 {
     [SerializeField]
     private GameObject menu;
+    [SerializeField]
+    private GameObject healthImage;
+    [SerializeField]
+    private GameObject healthText;
     [HideInInspector]
     public GameObject player;
 
@@ -13,6 +17,8 @@ public class OpenMenu : MonoBehaviour
     private void Start()
     {
         menu.SetActive(false);
+        healthImage.SetActive(false);
+        healthText.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -22,6 +28,8 @@ public class OpenMenu : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             menu.SetActive(true);
+            healthImage.SetActive(false);
+            healthText.SetActive(false);
             player.gameObject.GetComponent<PlayerShooting>().inMenu = true;
         }
     }
@@ -49,6 +57,8 @@ public class OpenMenu : MonoBehaviour
     void LeaveMenu()
     {
         menu.SetActive(false);
+        healthImage.SetActive(true);
+        healthText.SetActive(true);
         player.gameObject.GetComponent<PlayerShooting>().inMenu = false;
     }
 }

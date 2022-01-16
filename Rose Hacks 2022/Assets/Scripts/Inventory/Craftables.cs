@@ -7,17 +7,27 @@ public class Craftables : MonoBehaviour
 
     public GameObject player;
     private PlayerInventory inventory;
-    
+
+    private AudioSource audio;
+    [SerializeField]
+    private AudioClip damageSound;
+    [SerializeField]
+    private AudioClip collectSound;
+
     public void Start()
     {
         player = gameObject;
         inventory = player.GetComponent<PlayerInventory>();
+        audio = GameObject.Find("AudioSource").GetComponent<AudioSource>();
+
     }
 
 
     void Increasehappiness(float value)
     {
         player.GetComponent<PlayerStats>().ChangeHappiness(value);
+        audio.PlayOneShot(collectSound, .2f);
+
     }
 
 
@@ -31,7 +41,11 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Berry", 2);
 
             // gain happiness
-            Increasehappiness(.1f);
+            Increasehappiness(.15f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 
@@ -45,6 +59,11 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Rice", 2);
 
             // gain happiness
+            Increasehappiness(.15f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 
@@ -60,6 +79,11 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Mushroom", 2);
 
             // gain happiness
+            Increasehappiness(.15f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 
@@ -72,6 +96,11 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Rice", 3);
 
             // gain happiness
+            Increasehappiness(.15f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 
@@ -87,6 +116,11 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Milk", 1);
 
             // gain happiness
+            Increasehappiness(.15f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 
@@ -101,6 +135,11 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Rice", 2);
 
             // gain happiness
+            Increasehappiness(.2f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 
@@ -116,6 +155,11 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Pepper", 2);
 
             // gain happiness
+            Increasehappiness(.2f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 
@@ -131,6 +175,11 @@ public class Craftables : MonoBehaviour
 
 
             // gain happiness
+            Increasehappiness(.2f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 
@@ -148,6 +197,11 @@ public class Craftables : MonoBehaviour
             player.GetComponent<PlayerInventory>().removeItem("Banana", 2);
 
             // gain happiness
+            Increasehappiness(.5f);
+        }
+        else
+        {
+            audio.PlayOneShot(damageSound, .2f);
         }
     }
 }

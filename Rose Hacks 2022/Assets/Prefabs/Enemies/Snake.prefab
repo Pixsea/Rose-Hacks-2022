@@ -67,7 +67,7 @@ MonoBehaviour:
   walkTime: 5
   telegraphTime: 2
   attackTime: 3
-  venom: {fileID: 1712404005685873734, guid: e2afe2cad7db0164ab13fe1412e83147, type: 3}
+  venom: {fileID: 6736115418203063851, guid: 8753221acbe6fb748b3ae4683d6952ee, type: 3}
   sprayAmount: 50
   sprayDelay: 0.05
 --- !u!50 &246905564727277137
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5040470969677068985, guid: 9ed1fec40a0de434bb9e91e0a649c0d2,
+  m_Sprite: {fileID: -4291839568936971807, guid: bc03eb690a63e904793be6026a37533b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -248,7 +248,7 @@ Animator:
   m_GameObject: {fileID: 8271875928219285192}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7760972ed766d14eb2aed29109cc75e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -270,4 +270,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 246905564727277137}
-  scale: -1
+  scale: 1
