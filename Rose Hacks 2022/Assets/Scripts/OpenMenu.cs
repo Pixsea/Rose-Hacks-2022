@@ -17,8 +17,8 @@ public class OpenMenu : MonoBehaviour
     private void Start()
     {
         menu.SetActive(false);
-        healthImage.SetActive(false);
-        healthText.SetActive(false);
+        healthImage.SetActive(true);
+        healthText.SetActive(true);
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
