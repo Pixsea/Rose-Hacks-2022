@@ -60,6 +60,45 @@ public class PlayerInventory : MonoBehaviour
 
 
     // Add function to check if player has enough ingredients to craft something
+    public bool hasEnough(List<string> ingredientNames, List<int> ingredientQuant)
+    {
+        // if lists are of different size: scuffed solution
+        if(ingredientNames.Count != ingredientQuant.Count)
+        {
+            return false;
+        }
+        else
+        {
+            for(int i = 0; i < ingredientNames.Count; i++)
+            {
+                if(inventoryDescr.ContainsKey(ingredientNames[i]))
+                {
+                    // if too many ingredients are required
+                    if(ingredientQuant[i] > inventoryQuantity[ingredientNames[i]])
+                    {
+                        return false;
+                    }
+                }
+                // if ingredient is not in inventory return false
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    public Dictionary<string, int> getInventoryQuantity()
+    {
+        return inventoryQuantity;
+    }
+
+
+    public Dictionary<string, string> getDescriptions()
+    {
+        return inventoryDescr;
+    }
 
 
 }
