@@ -28,8 +28,24 @@ public class BasicBullet : MonoBehaviour
         rb.velocity = velocity;
     }
 
+
+    void Dead()
+    {
+        DestroyObject(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.layer == )
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Enemy>().Damage(power);
+            Dead();
+        }
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            collision.gameObject.GetComponent<Enemy>().Damage(power);
+            Dead();
+        }
     }
 }

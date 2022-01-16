@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2924079140217996299}
   - component: {fileID: 4122602120326359124}
   - component: {fileID: 8211184963133325669}
+  - component: {fileID: 822443639497719266}
   - component: {fileID: 8727087583067882127}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thorn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +99,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &822443639497719266
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901820205845100404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.955
 --- !u!50 &8727087583067882127
 Rigidbody2D:
   serializedVersion: 4
