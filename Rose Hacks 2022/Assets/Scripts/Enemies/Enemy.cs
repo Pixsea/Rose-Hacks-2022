@@ -40,8 +40,7 @@ public class Enemy : MonoBehaviour
 
 
     // For animations
-    [SerializeField]
-    private Animator animator;
+    public Animator animator;
 
 
 
