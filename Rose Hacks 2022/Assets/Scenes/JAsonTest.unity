@@ -340,10 +340,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turtle
       objectReference: {fileID: 0}
-    - target: {fileID: 3311556446467131512, guid: ebfeb68ad53ff0f41b055ffb667e0887,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebfeb68ad53ff0f41b055ffb667e0887, type: 3}

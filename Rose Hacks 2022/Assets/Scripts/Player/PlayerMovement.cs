@@ -28,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
     private bool Rightpress;
 
 
+    // For animations
+    [SerializeField]
+    private Animator animator;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +47,10 @@ public class PlayerMovement : MonoBehaviour
         Leftpress = Input.GetKey(Leftkey);
         Downpress = Input.GetKey(Downkey);
         Rightpress = Input.GetKey(Rightkey);
+
+        animator.SetFloat("Horizontal", rb.velocity.x);
+        animator.SetFloat("Vertical", rb.velocity.y);
+        animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
     }
 
     private void FixedUpdate()
