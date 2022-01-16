@@ -179,7 +179,7 @@ public class PlayerStats : MonoBehaviour
             gameObject.GetComponent<PlayerInventory>().addItem(newItem);
             DestroyObject(obj.gameObject);
 
-            //ChangeHappiness(.1f);
+            ChangeHappiness(.02f);
             audio.PlayOneShot(collectSound, .2f);
         }
     }
