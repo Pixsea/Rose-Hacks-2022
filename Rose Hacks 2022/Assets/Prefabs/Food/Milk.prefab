@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3058269586239666178
+--- !u!1 &3433925688176464455
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3058269586239666182}
-  - component: {fileID: 3058269586239666181}
-  - component: {fileID: 3058269586239666180}
-  - component: {fileID: 3058269586239666179}
+  - component: {fileID: 3433925688176464451}
+  - component: {fileID: 3433925688176464448}
+  - component: {fileID: 3433925688176464449}
+  - component: {fileID: 3433925688176464454}
   m_Layer: 0
-  m_Name: Shell Bowl
+  m_Name: Milk
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3058269586239666182
+--- !u!4 &3433925688176464451
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3058269586239666178}
+  m_GameObject: {fileID: 3433925688176464455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.78, y: 3.52, z: -1.2178309}
+  m_LocalPosition: {x: -4.691475, y: 11.849728, z: -1.2178309}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3058269586239666181
+--- !u!58 &3433925688176464448
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3058269586239666178}
+  m_GameObject: {fileID: 3433925688176464455}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -49,28 +49,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &3058269586239666180
+--- !u!114 &3433925688176464449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3058269586239666178}
+  m_GameObject: {fileID: 3433925688176464455}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58e608646266b4c41a6477b1e9f3fce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Bowl
+  name: Milk
   quantity: 1
-  description: Retrieved from a scared turtle
---- !u!212 &3058269586239666179
+  description: Retrieved from an angry cow
+--- !u!212 &3433925688176464454
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3058269586239666178}
+  m_GameObject: {fileID: 3433925688176464455}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -103,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: feffa8649091896459475812d4975b30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ceb17a25a3f5bc499fb54cb75dc0808, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -58,6 +58,8 @@ MonoBehaviour:
   facingPlayer: 0
   moving: 0
   followDistance: 30
+  dropItem: {fileID: 1930675593808552889, guid: 490b80b159a71cf46996a32e0473b758,
+    type: 3}
   eSriteRenderer: {fileID: 4937828311277624459}
   colorCode: {r: 0, g: 0, b: 0, a: 0}
   flickerCode: {r: 0, g: 0, b: 0, a: 0}
@@ -224,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8999134616060265310, guid: 308d3cfcf45b8fd4b801f958f4792f4b,
+  m_Sprite: {fileID: 5040470969677068985, guid: 2df88048b4c61ab428bc70c3bd42919e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -246,7 +248,7 @@ Animator:
   m_GameObject: {fileID: 7127083192814143392}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b8e729f906c50d7489c4a3a358ec1f8c, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -268,3 +270,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1391269779224364857}
+  scale: 1
