@@ -17,11 +17,6 @@ public class Turtle : Enemy
                 MoveForward();
                 TurnTowardsPlayer();
             }
-
-            if (currHealth <= 0)
-            {
-                Dead();
-            }
         }
         else if (alive)
         {
@@ -33,6 +28,10 @@ public class Turtle : Enemy
         }
 
         ColorUpdate();
+        if (currHealth <= 0)
+        {
+            Dead();
+        }
     }
 
     public override IEnumerator ActionLoop()
@@ -49,7 +48,9 @@ public class Turtle : Enemy
         speed *= -10;
         alive = false;
         animator.SetTrigger("Dead");
+        currHealth = 1000;
         GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity) as GameObject;
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
         StartCoroutine(RunAway());
     }
 
