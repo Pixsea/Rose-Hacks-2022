@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerInventory : MonoBehaviour
     
     private Dictionary<string, string> inventoryDescr = new Dictionary<string, string>();
     private Dictionary<string, int> inventoryQuantity = new Dictionary<string, int>();
+    private Dictionary<string, Sprite> images = new Dictionary<string, Sprite>();
 
 
     // Start is called before the first frame update
@@ -24,19 +27,36 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(inventoryQuantity);
+        //Debug.Log(inventoryQuantity);
+        /*
+        if(Input.GetKeyDown("space"))
+        {
+            Debug.Log("REMOVING");
+            removeItem("Berry", 1);
+        }
+        */
+
     }
 
     public void addItem(Item item)
     {
         if(inventoryDescr.ContainsKey(item.getName()))
         {
+            // Add item to dictionaries
             inventoryQuantity[item.getName()] += item.getQuantity();
+
+            // Add items to UI
+            this.gameObject.GetComponent<InventoryUI>().updateValue(item.getName(), inventoryQuantity[item.getName()]);
         }
         else
         {
+            // Adds item to dictionaries
             inventoryDescr[item.getName()] = item.getDescription();
             inventoryQuantity[item.getName()] = item.getQuantity();
+            images[item.getName()] = item.gameObject.GetComponent<SpriteRenderer>().sprite;
+            
+            // Adds item to UI
+            this.gameObject.GetComponent<InventoryUI>().addItemToInventory(item.getName(), item.getQuantity(), images[item.getName()]);
         }
 
     }
@@ -47,13 +67,15 @@ public class PlayerInventory : MonoBehaviour
         {
             if(num >= inventoryQuantity[name])
             {
-                inventoryDescr.Remove(name);
-                inventoryQuantity.Remove(name);
+                //inventoryDescr.Remove(name);
+                //inventoryQuantity.Remove(name);
+                inventoryQuantity[name] = 0;
             }
             else
             {
                 inventoryQuantity[name] = inventoryQuantity[name] - num;
             }
+            this.gameObject.GetComponent<InventoryUI>().updateValue(name, inventoryQuantity[name]);
         }
     }
 

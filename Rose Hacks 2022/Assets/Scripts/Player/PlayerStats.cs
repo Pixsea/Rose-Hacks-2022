@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -9,13 +10,16 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private SpriteRenderer pSriteRenderer;
 
-    private float spawnX;
-    private float spawnY;
-    private float spawnRotation;
+    private Vector2 spawnPoint;
 
     public int maxHealth;
     [HideInInspector]
     public int health;
+
+    [SerializeField]
+    private Text healthText;
+    [SerializeField]
+    private Image happinessMeter;
 
 
     [SerializeField]
@@ -38,11 +42,15 @@ public class PlayerStats : MonoBehaviour
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
-        spawnX = transform.position.x;
-        spawnY = transform.position.y;
-        spawnRotation = transform.rotation.eulerAngles.z;
+        spawnPoint = gameObject.transform.position;
 
         health = maxHealth;
+        healthText = GameObject.Find("Health Text").GetComponent<Text>();
+        happinessMeter = GameObject.Find("Happiness Meter").GetComponent<Image>();
+
+        healthText.text = health.ToString();
+        happinessMeter.fillAmount = 0;
+
 
         damageInvincibilityLength = damageInvincibilityLength / Time.fixedDeltaTime;
         damageInvincible = false;
@@ -97,11 +105,27 @@ public class PlayerStats : MonoBehaviour
         }
 
         damageInvincibilityTimer--;
+
+
+        if (health <= 0)
+        {
+            Respawn();
+            
+
+        }
     }
+
+
+
 
     public void ApplyDamage(int damage)
     {
+        if (damageInvincible)
+        {
+            return;
+        }
         health -= damage;
+        healthText.text = health.ToString();
         DamageInvincibility();
     }
 
@@ -110,6 +134,21 @@ public class PlayerStats : MonoBehaviour
         damageInvincible = true;
         damageInvincibilityTimer = damageInvincibilityLength;
     }
+
+    void Respawn()
+    {
+        health = maxHealth;
+        healthText.text = health.ToString();
+        gameObject.transform.position = spawnPoint;
+    }
+
+
+    void ChangeHappiness(float changeValue)
+    {
+        happinessMeter.fillAmount += changeValue;
+    }
+
+
 
     void OnTriggerStay2D(Collider2D obj)
     {
@@ -127,10 +166,18 @@ public class PlayerStats : MonoBehaviour
         if (obj.gameObject.tag == "Food")
         {
             Item newItem = obj.gameObject.GetComponent<Item>();
-            gameObject.GetComponent<PlayerInventory>().addItem(newItem);
+            //gameObject.GetComponent<PlayerInventory>().addItem(newItem);
             DestroyObject(obj.gameObject);
+
+            ChangeHappiness(.1f);
         }
     }
+
+
+
+
+
+
 
     // Given a color, makes the enemy that color
     public void Flash(string color)
