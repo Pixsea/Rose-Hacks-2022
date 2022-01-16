@@ -123,6 +123,13 @@ public class PlayerStats : MonoBehaviour
                 ApplyDamage(damage);
             }
         }
+
+        if (obj.gameObject.tag == "Food")
+        {
+            Item newItem = obj.gameObject.GetComponent<Item>();
+            gameObject.GetComponent<PlayerInventory>().addItem(newItem);
+            DestroyObject(obj.gameObject);
+        }
     }
 
     // Given a color, makes the enemy that color
