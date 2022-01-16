@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantityText: {fileID: 7302965317438201844}
-  image: {fileID: 0}
+  image: {fileID: 6280801592495979944}
 --- !u!1001 &3003155942569122687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166,6 +166,12 @@ PrefabInstance:
 --- !u!4 &5413347075184898007 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7101411424473461928, guid: 830237fe92532214c9a61f07a65e7ca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3003155942569122687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6280801592495979944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9116615704433501911, guid: 830237fe92532214c9a61f07a65e7ca9,
     type: 3}
   m_PrefabInstance: {fileID: 3003155942569122687}
   m_PrefabAsset: {fileID: 0}
