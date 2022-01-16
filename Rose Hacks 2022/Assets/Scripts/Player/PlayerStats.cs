@@ -166,7 +166,7 @@ public class PlayerStats : MonoBehaviour
         if (obj.gameObject.tag == "Food")
         {
             Item newItem = obj.gameObject.GetComponent<Item>();
-            //gameObject.GetComponent<PlayerInventory>().addItem(newItem);
+            gameObject.GetComponent<PlayerInventory>().addItem(newItem);
             DestroyObject(obj.gameObject);
 
             ChangeHappiness(.1f);
