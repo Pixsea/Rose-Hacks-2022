@@ -18,6 +18,8 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField]
     private Text healthText;
+    [SerializeField]
+    private Image happinessMeter;
 
 
     [SerializeField]
@@ -44,7 +46,10 @@ public class PlayerStats : MonoBehaviour
 
         health = maxHealth;
         healthText = GameObject.Find("Health Text").GetComponent<Text>();
+        happinessMeter = GameObject.Find("Happiness Meter").GetComponent<Image>();
+
         healthText.text = health.ToString();
+        happinessMeter.fillAmount = 0;
 
 
         damageInvincibilityLength = damageInvincibilityLength / Time.fixedDeltaTime;
@@ -137,6 +142,14 @@ public class PlayerStats : MonoBehaviour
         gameObject.transform.position = spawnPoint;
     }
 
+
+    void ChangeHappiness(float changeValue)
+    {
+        happinessMeter.fillAmount += changeValue;
+    }
+
+
+
     void OnTriggerStay2D(Collider2D obj)
     {
         if (damageInvincible == false)
@@ -153,8 +166,10 @@ public class PlayerStats : MonoBehaviour
         if (obj.gameObject.tag == "Food")
         {
             Item newItem = obj.gameObject.GetComponent<Item>();
-            gameObject.GetComponent<PlayerInventory>().addItem(newItem);
+            //gameObject.GetComponent<PlayerInventory>().addItem(newItem);
             DestroyObject(obj.gameObject);
+
+            ChangeHappiness(.1f);
         }
     }
 
