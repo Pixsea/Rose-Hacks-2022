@@ -79,6 +79,25 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    public bool hasEnough(string name, int quantity)
+    {
+        if(inventoryQuantity.ContainsKey(name))
+        {
+            if(inventoryQuantity[name] >= quantity)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
 
     // Add function to check if player has enough ingredients to craft something
