@@ -67,6 +67,8 @@ MonoBehaviour:
   attackTime: 1
   walkSpeed: 1
   attackSpeed: 20
+  shellPrefab: {fileID: 3058269586239666178, guid: c3124564a5f204140920843293a8e25f,
+    type: 3}
 --- !u!50 &1344490485728982365
 Rigidbody2D:
   serializedVersion: 4
