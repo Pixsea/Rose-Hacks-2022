@@ -10,6 +10,14 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private SpriteRenderer pSriteRenderer;
 
+
+    private AudioSource audio;
+    [SerializeField]
+    private AudioClip damageSound;
+    [SerializeField]
+    private AudioClip collectSound;
+
+
     private Vector2 spawnPoint;
 
     public int maxHealth;
@@ -47,6 +55,7 @@ public class PlayerStats : MonoBehaviour
         health = maxHealth;
         healthText = GameObject.Find("Health Text").GetComponent<Text>();
         happinessMeter = GameObject.Find("Happiness Meter").GetComponent<Image>();
+        audio = GameObject.Find("AudioSource").GetComponent<AudioSource>();
 
         healthText.text = health.ToString();
         happinessMeter.fillAmount = 0;
@@ -126,6 +135,7 @@ public class PlayerStats : MonoBehaviour
         }
         health -= damage;
         healthText.text = health.ToString();
+        audio.PlayOneShot(damageSound, .2f);
         DamageInvincibility();
     }
 
@@ -170,6 +180,7 @@ public class PlayerStats : MonoBehaviour
             DestroyObject(obj.gameObject);
 
             ChangeHappiness(.1f);
+            audio.PlayOneShot(collectSound, .2f);
         }
     }
 

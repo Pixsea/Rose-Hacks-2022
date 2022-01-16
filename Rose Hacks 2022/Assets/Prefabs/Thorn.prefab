@@ -49,6 +49,8 @@ MonoBehaviour:
   power: 10
   speed: 20
   timer: 5
+  shootSound: {fileID: 8300000, guid: 237e10308c08cfe428e7c1b0991e954b, type: 3}
+  impactSound: {fileID: 8300000, guid: a2f452a1261adac48be54ef033ba7e82, type: 3}
 --- !u!212 &8211184963133325669
 SpriteRenderer:
   m_ObjectHideFlags: 0
