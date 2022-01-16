@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Bowl
-  quantity: 1
+  quantity: 5
   description: Retrieved from a scared turtle
 --- !u!212 &3058269586239666179
 SpriteRenderer:
