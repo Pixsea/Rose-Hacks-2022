@@ -9,6 +9,9 @@ public class DontRotate : MonoBehaviour
 
     private float defaultXScale;
 
+    [SerializeField]
+    private int scale = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +25,12 @@ public class DontRotate : MonoBehaviour
 
         if (rb.velocity.x > .01f)
         {
-            gameObject.transform.localScale = new Vector3(defaultXScale * 1, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            gameObject.transform.localScale = new Vector3(defaultXScale * scale, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
         }
 
         if (rb.velocity.x < -.01f)
         {
-            gameObject.transform.localScale = new Vector3(defaultXScale * -1, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            gameObject.transform.localScale = new Vector3(defaultXScale * -scale, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
         }
     }
 }

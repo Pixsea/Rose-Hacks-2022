@@ -44,7 +44,6 @@ public class EnemyBullet : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall")
         {
-            collision.gameObject.GetComponent<Enemy>().Damage(power);
             Dead();
         }
     }

@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour
 
     public float followDistance = 10f;
 
+    public GameObject dropItem;
+    public GameObject dropItem2;
+
 
 
 
@@ -73,6 +76,15 @@ public class Enemy : MonoBehaviour
 
     public virtual void Dead()
     {
+        if (dropItem != null)
+        {
+            GameObject item = Instantiate(dropItem, transform.position, Quaternion.identity) as GameObject;
+        }
+
+        if (dropItem2 != null)
+        {
+            GameObject item = Instantiate(dropItem2, transform.position + new Vector3(1, 1, 0), Quaternion.identity) as GameObject;
+        }
         DestroyObject(gameObject);
     }
 

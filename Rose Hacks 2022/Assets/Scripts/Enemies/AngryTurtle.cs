@@ -62,7 +62,6 @@ public class AngryTurtle : Enemy
                 MoveForward();
             }
 
-            ColorUpdate();
             if (currHealth <= 0)
             {
                 Dead();
@@ -72,6 +71,8 @@ public class AngryTurtle : Enemy
         {
             MoveForward();
         }
+
+        ColorUpdate();
     }
 
     public override IEnumerator ActionLoop()
