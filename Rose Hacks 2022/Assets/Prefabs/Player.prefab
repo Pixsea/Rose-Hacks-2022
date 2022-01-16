@@ -87,8 +87,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pSprite: {fileID: 8577435208541381562}
   pSriteRenderer: {fileID: 8577435208541381561}
+  damageSound: {fileID: 8300000, guid: 2c92a5b798f192648baa0ec572155130, type: 3}
   maxHealth: 100
   health: 0
+  healthText: {fileID: 0}
+  happinessMeter: {fileID: 0}
   damageInvincibilityLength: 2
 --- !u!50 &8577435208541381558
 Rigidbody2D:
@@ -223,6 +226,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryBlockPrefab: {fileID: 3016485404595891946, guid: 2c00e6c72a914724ba87e1c5459e97ed,
     type: 3}
-  startingObject: {fileID: 0}
   inventoryBlocks: []
   margin: 2.2

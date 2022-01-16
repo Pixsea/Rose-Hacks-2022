@@ -15,10 +15,23 @@ public class BasicBullet : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    
+    private AudioSource audio;
+    [SerializeField]
+    private AudioClip shootSound;
+    [SerializeField]
+    private AudioClip impactSound;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        audio = GameObject.Find("AudioSource").GetComponent<AudioSource>();
+
         rb = GetComponent<Rigidbody2D>();
+        audio.PlayOneShot(shootSound, .1f);
+
     }
 
     // Update is called once per frame
@@ -38,13 +51,13 @@ public class BasicBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            audio.PlayOneShot(impactSound, .1f);
             collision.gameObject.GetComponent<Enemy>().Damage(power);
             Dead();
         }
 
         if (collision.gameObject.tag == "Wall")
         {
-            collision.gameObject.GetComponent<Enemy>().Damage(power);
             Dead();
         }
     }
