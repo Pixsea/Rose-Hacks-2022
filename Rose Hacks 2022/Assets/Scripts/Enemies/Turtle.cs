@@ -5,10 +5,12 @@ using UnityEngine;
 public class Turtle : Enemy
 {
     private bool alive = true;
+    [SerializeField]
+    private GameObject shellPrefab;  //  Shell item to drop
 
     private void FixedUpdate()
     {
-        if (alive)
+        if (alive && (Vector3.Distance(transform.position, player.transform.position) < followDistance))
         {
             if (moving)
             {
@@ -20,6 +22,10 @@ public class Turtle : Enemy
             {
                 Dead();
             }
+        }
+        else if (alive)
+        {
+            rb.velocity = Vector2.zero;
         }
         else
         {
@@ -43,6 +49,7 @@ public class Turtle : Enemy
         speed *= -10;
         alive = false;
         animator.SetTrigger("Dead");
+        GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity) as GameObject;
         StartCoroutine(RunAway());
     }
 

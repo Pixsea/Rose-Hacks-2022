@@ -57,10 +57,13 @@ MonoBehaviour:
   turning: 0
   facingPlayer: 0
   moving: 0
+  followDistance: 10
   eSriteRenderer: {fileID: 5249996685733571511}
   colorCode: {r: 0, g: 0, b: 0, a: 0}
   flickerCode: {r: 0, g: 0, b: 0, a: 0}
   animator: {fileID: 7292376859225552657}
+  shellPrefab: {fileID: 3058269586239666178, guid: c3124564a5f204140920843293a8e25f,
+    type: 3}
 --- !u!50 &2239350018892296197
 Rigidbody2D:
   serializedVersion: 4

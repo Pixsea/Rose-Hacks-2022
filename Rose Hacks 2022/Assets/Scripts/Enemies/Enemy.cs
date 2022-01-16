@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public bool moving = false;
 
+    public float followDistance = 10f;
+
 
 
 
