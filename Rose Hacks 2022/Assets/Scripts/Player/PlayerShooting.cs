@@ -12,6 +12,9 @@ public class PlayerShooting : MonoBehaviour
 
     private bool canAttack = true;
 
+    [HideInInspector]
+    public bool inMenu = false;
+
     [SerializeField]
     private Animator animator;
 
@@ -23,7 +26,7 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && canAttack)
+        if (Input.GetMouseButton(0) && canAttack && !inMenu)
         {
             
             StartCoroutine(ShootBullet());
