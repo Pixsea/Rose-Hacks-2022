@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e608646266b4c41a6477b1e9f3fce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Bannana
+  name: Mushroom
   quantity: 1
   description: Food
 --- !u!212 &6646721087976639470
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2cb74a20f056b434a959b3198dbe82b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9bde06e77d29c84da40ded4e0701143, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
