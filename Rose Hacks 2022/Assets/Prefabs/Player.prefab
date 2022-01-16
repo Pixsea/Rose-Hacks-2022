@@ -88,6 +88,7 @@ MonoBehaviour:
   pSprite: {fileID: 8577435208541381562}
   pSriteRenderer: {fileID: 8577435208541381561}
   damageSound: {fileID: 8300000, guid: 2c92a5b798f192648baa0ec572155130, type: 3}
+  collectSound: {fileID: 8300000, guid: 0539daedd3798974facd0ad4fb37b46d, type: 3}
   maxHealth: 100
   health: 0
   healthText: {fileID: 0}
