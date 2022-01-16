@@ -12,6 +12,9 @@ public class PlayerShooting : MonoBehaviour
 
     private bool canAttack = true;
 
+    [SerializeField]
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,8 @@ public class PlayerShooting : MonoBehaviour
         Quaternion shootRotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
 
         GameObject bullet = Instantiate(projectile, transform.position, shootRotation) as GameObject;
+
+        animator.SetTrigger("Attack");
 
         yield return new WaitForSeconds(attackCooldown);
 

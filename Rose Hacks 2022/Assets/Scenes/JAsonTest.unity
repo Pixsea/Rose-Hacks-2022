@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &215480557 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7292376859225552657, guid: ebfeb68ad53ff0f41b055ffb667e0887,
+    type: 3}
+  m_PrefabInstance: {fileID: 2239350018084604604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &215480558 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5249996685733571511, guid: ebfeb68ad53ff0f41b055ffb667e0887,
+    type: 3}
+  m_PrefabInstance: {fileID: 2239350018084604604}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &834259345
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +216,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1899760666 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2239350018892296197, guid: ebfeb68ad53ff0f41b055ffb667e0887,
+    type: 3}
+  m_PrefabInstance: {fileID: 2239350018084604604}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2072009381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,5 +358,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turtle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2239350018892296203, guid: ebfeb68ad53ff0f41b055ffb667e0887,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 215480557}
+    - target: {fileID: 2239350018892296203, guid: ebfeb68ad53ff0f41b055ffb667e0887,
+        type: 3}
+      propertyPath: eSriteRenderer
+      value: 
+      objectReference: {fileID: 215480558}
+    - target: {fileID: 3229488629312719834, guid: ebfeb68ad53ff0f41b055ffb667e0887,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1899760666}
+    m_RemovedComponents:
+    - {fileID: 3095101330197945849, guid: ebfeb68ad53ff0f41b055ffb667e0887, type: 3}
+    - {fileID: 2239350018892296202, guid: ebfeb68ad53ff0f41b055ffb667e0887, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ebfeb68ad53ff0f41b055ffb667e0887, type: 3}

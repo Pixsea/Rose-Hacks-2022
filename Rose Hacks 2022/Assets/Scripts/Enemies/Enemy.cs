@@ -39,6 +39,11 @@ public class Enemy : MonoBehaviour
     private float flickerTimer;
 
 
+    // For animations
+    [SerializeField]
+    private Animator animator;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +56,11 @@ public class Enemy : MonoBehaviour
         colorCode = new Color(1, 1, 1, 1);
         flickerCode = new Color(1, 1, 1, 1);
         //tintCode = new Color(1, 1, 1, 1);
+    }
+
+    private void Update()
+    {
+        animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
     }
 
     public virtual void Damage(int damage)

@@ -70,6 +70,7 @@ MonoBehaviour:
   projectile: {fileID: 1901820205845100404, guid: 6ed6b5bd58013f24584341ad060b85a0,
     type: 3}
   attackCooldown: 0.6
+  animator: {fileID: 5362170136312223141}
 --- !u!114 &1154959544871331091
 MonoBehaviour:
   m_ObjectHideFlags: 0
